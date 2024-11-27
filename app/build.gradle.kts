@@ -80,7 +80,6 @@ dependencies {
     // Android architecture components
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation(project(":app"))
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.8.7")
 
     // Third-party libraries
