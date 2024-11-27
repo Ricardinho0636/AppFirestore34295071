@@ -24,6 +24,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.example.fireeats.databinding.FragmentMainBinding
 import br.edu.up.rgm34295071.adapter.RestaurantAdapter
+import br.edu.up.rgm34295071.model.Restaurant
 import br.edu.up.rgm34295071.util.RestaurantUtil
 import br.edu.up.rgm34295071.viewmodel.MainActivityViewModel
 import com.google.firebase.firestore.DocumentSnapshot
@@ -55,6 +56,14 @@ class MainFragment : Fragment(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Firestore
+        firestore = Firebase.firestore
+
+        // Get the 50 highest rated restaurants
+        query = firestore.collection("restaurants")
+            .orderBy("avgRating", Query.Direction.DESCENDING)
+            .limit(LIMIT.toLong())
+
         setHasOptionsMenu(true)
         binding = FragmentMainBinding.inflate(inflater, container, false);
         return binding.root;
@@ -71,11 +80,6 @@ class MainFragment : Fragment(),
 
         // Firestore
         firestore = Firebase.firestore
-
-        // Get the 50 highest rated restaurants
-        query = firestore.collection("restaurants")
-            .orderBy("avgRating", Query.Direction.DESCENDING)
-            .limit(LIMIT.toLong())
 
         // RecyclerView
         query?.let {
@@ -184,7 +188,34 @@ class MainFragment : Fragment(),
     }
 
     override fun onFilter(filters: Filters) {
-        // TODO(developer): Construct new query
+        // Construct query basic query
+        var query: Query = firestore.collection("restaurants")
+
+        // Category (equality filter)
+        if (filters.hasCategory()) {
+            query = query.whereEqualTo(Restaurant.FIELD_CATEGORY, filters.category)
+        }
+
+        // City (equality filter)
+        if (filters.hasCity()) {
+            query = query.whereEqualTo(Restaurant.FIELD_CITY, filters.city)
+        }
+
+        // Price (equality filter)
+        if (filters.hasPrice()) {
+            query = query.whereEqualTo(Restaurant.FIELD_PRICE, filters.price)
+        }
+
+        // Sort by (orderBy with direction)
+        if (filters.hasSortBy()) {
+            query = query.orderBy(filters.sortBy.toString(), filters.sortDirection)
+        }
+
+        // Limit items
+        query = query.limit(LIMIT.toLong())
+
+        // Update the query
+        adapter?.setQuery(query)
 
         // Set header
         binding.textCurrentSearch.text = HtmlCompat.fromHtml(
@@ -222,6 +253,7 @@ class MainFragment : Fragment(),
             restaurantsRef.add(randomRestaurant)
         }
     }
+
 
     private fun showSignInErrorDialog(@StringRes message: Int) {
         val dialog = AlertDialog.Builder(requireContext())
