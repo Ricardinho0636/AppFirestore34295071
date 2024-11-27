@@ -1,8 +1,8 @@
-package com.google.firebase.example.rgm342955071.util
+package br.edu.up.rgm34295071.util
 
 import android.content.Context
 import androidx.startup.Initializer
-import com.google.firebase.example.rgm342955071.BuildConfig
+import com.google.firebase.example.fireeats.BuildConfig
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase

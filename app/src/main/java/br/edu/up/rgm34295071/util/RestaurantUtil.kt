@@ -1,8 +1,8 @@
-package com.google.firebase.example.rgm342955071.util
+package br.edu.up.rgm34295071.util
 
 import android.content.Context
 import com.google.firebase.example.fireeats.R
-import com.google.firebase.example.rgm342955071.model.Restaurant
+import br.edu.up.rgm34295071.model.Restaurant
 import java.util.Arrays
 import java.util.Locale
 import java.util.Random

@@ -1,4 +1,4 @@
-package com.google.firebase.example.rgm342955071
+package br.edu.up.rgm34295071
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.example.fireeats.databinding.DialogRatingBinding
-import com.google.firebase.example.rgm342955071.model.Rating
+import br.edu.up.rgm34295071.model.Rating
 import com.google.firebase.ktx.Firebase
 
 /**

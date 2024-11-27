@@ -1,4 +1,4 @@
-package com.google.firebase.example.rgm342955071.adapter
+package br.edu.up.rgm34295071.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log

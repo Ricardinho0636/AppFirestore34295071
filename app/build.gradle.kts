@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -57,6 +59,12 @@ dependencies {
     // FirebaseUI (for authentication)
     implementation("com.firebaseui:firebase-ui-auth:8.0.2")
 
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
     // Support Libs
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.vectordrawable:vectordrawable-animated:1.2.0")
@@ -72,6 +80,7 @@ dependencies {
     // Android architecture components
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation(project(":app"))
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.8.7")
 
     // Third-party libraries

@@ -1,4 +1,4 @@
-package com.google.firebase.example.rgm342955071
+package br.edu.up.rgm34295071
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

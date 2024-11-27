@@ -1,6 +1,6 @@
-package com.google.firebase.example.rgm342955071.util
+package br.edu.up.rgm34295071.util
 
-import com.google.firebase.example.rgm342955071.model.Rating
+import br.edu.up.rgm34295071.model.Rating
 import java.util.ArrayList
 import java.util.Random
 import java.util.UUID

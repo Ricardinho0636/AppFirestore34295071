@@ -1,4 +1,4 @@
-package com.google.firebase.example.rgm342955071
+package br.edu.up.rgm34295071
 
 import android.content.Context
 import android.os.Bundle
@@ -14,10 +14,10 @@ import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.example.fireeats.databinding.FragmentRestaurantDetailBinding
-import com.google.firebase.example.rgm342955071.adapter.RatingAdapter
-import com.google.firebase.example.rgm342955071.model.Rating
-import com.google.firebase.example.rgm342955071.model.Restaurant
-import com.google.firebase.example.rgm342955071.util.RestaurantUtil
+import br.edu.up.rgm34295071.adapter.RatingAdapter
+import br.edu.up.rgm34295071.model.Rating
+import br.edu.up.rgm34295071.model.Restaurant
+import br.edu.up.rgm34295071.util.RestaurantUtil
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.EventListener
@@ -139,7 +139,7 @@ class RestaurantDetailFragment : Fragment(),
     }
 
     private fun onAddRatingClicked() {
-        ratingDialog?.show(childFragmentManager, RatingDialogFragment.TAG)
+        ratingDialog?.show(childFragmentManager, RatingDialogFragment.Companion.TAG)
     }
 
     override fun onRating(rating: Rating) {

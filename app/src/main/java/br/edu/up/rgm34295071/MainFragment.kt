@@ -1,4 +1,4 @@
-package com.google.firebase.example.rgm342955071
+package br.edu.up.rgm34295071
 
 import android.app.Activity
 import android.os.Bundle
@@ -23,8 +23,8 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.example.fireeats.databinding.FragmentMainBinding
-import com.google.firebase.example.rgm342955071.adapter.RestaurantAdapter
-import com.google.firebase.example.rgm342955071.viewmodel.MainActivityViewModel
+import br.edu.up.rgm34295071.adapter.RestaurantAdapter
+import br.edu.up.rgm34295071.viewmodel.MainActivityViewModel
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
@@ -198,9 +198,9 @@ class MainFragment : Fragment(),
     private fun startSignIn() {
         // Sign in with FirebaseUI
         val intent = AuthUI.getInstance().createSignInIntentBuilder()
-                .setAvailableProviders(listOf(AuthUI.IdpConfig.EmailBuilder().build()))
-                .setIsSmartLockEnabled(false)
-                .build()
+            .setAvailableProviders(listOf(AuthUI.IdpConfig.EmailBuilder().build()))
+            .setIsSmartLockEnabled(false)
+            .build()
 
         signInLauncher.launch(intent)
         viewModel.isSigningIn = true
