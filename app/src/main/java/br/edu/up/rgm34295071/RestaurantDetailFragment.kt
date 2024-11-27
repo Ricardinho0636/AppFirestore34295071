@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.Task
-import com.google.android.gms.tasks.Tasks
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.example.fireeats.databinding.FragmentRestaurantDetailBinding
 import br.edu.up.rgm34295071.adapter.RatingAdapter
+import com.google.firebase.example.fireeats.databinding.FragmentRestaurantDetailBinding
 import br.edu.up.rgm34295071.model.Rating
 import br.edu.up.rgm34295071.model.Restaurant
 import br.edu.up.rgm34295071.util.RestaurantUtil
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.EventListener
@@ -29,6 +29,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.example.fireeats.R
+
 
 class RestaurantDetailFragment : Fragment(),
     EventListener<DocumentSnapshot>,
