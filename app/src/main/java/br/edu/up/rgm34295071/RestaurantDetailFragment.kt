@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import br.edu.up.rgm34295071.adapter.RatingAdapter
-import com.google.firebase.example.fireeats.databinding.FragmentRestaurantDetailBinding
+import br.edu.up.rgm34295071.databinding.FragmentRestaurantDetailBinding
 import br.edu.up.rgm34295071.model.Rating
 import br.edu.up.rgm34295071.model.Restaurant
 import br.edu.up.rgm34295071.util.RestaurantUtil
@@ -27,7 +27,6 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.example.fireeats.R
 
 
 class RestaurantDetailFragment : Fragment(),

@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -8,38 +6,59 @@ plugins {
 }
 
 android {
-    namespace = "com.google.firebase.example.fireeats"
+    namespace = "br.edu.up.rgm34295071"
     compileSdk = 35
+
     defaultConfig {
-        applicationId = "com.google.firebase.example.fireeats"
-        minSdk = 23
+        applicationId = "br.edu.up.rgm34295071"
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
+
     buildFeatures {
         viewBinding = true
+        compose = true
     }
+
     lint {
         // TODO(thatfiredev): Remove this once
         //  https://github.com/bumptech/glide/issues/4940 is fixed
         disable.add("NotificationPermission")
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
@@ -55,15 +74,20 @@ dependencies {
 
     // Pinned to 20.7.0 as a workaround for issue https://github.com/firebase/quickstart-android/issues/1647
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     // FirebaseUI (for authentication)
     implementation("com.firebaseui:firebase-ui-auth:8.0.2")
 
-    // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+    // Android architecture components
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation(libs.firebase.dataconnect)
+    annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.8.7")
 
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation("com.google.firebase:firebase-analytics")
+    // Third-party libraries
+    implementation("me.zhanghai.android.materialratingbar:library:1.4.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Support Libs
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -77,12 +101,23 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.8.4")
     implementation("androidx.startup:startup-runtime:1.2.0")
 
-    // Android architecture components
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.8.7")
+    // Compose
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.navigation.runtime.ktx)
 
-    // Third-party libraries
-    implementation("me.zhanghai.android.materialratingbar:library:1.4.0")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
 }

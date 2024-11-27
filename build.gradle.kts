@@ -4,6 +4,8 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 
 plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
     id("com.google.gms.google-services") version "4.4.2" apply false
     id("androidx.navigation.safeargs") version "2.8.4" apply false
     id("com.github.ben-manes.versions") version "0.51.0" apply true

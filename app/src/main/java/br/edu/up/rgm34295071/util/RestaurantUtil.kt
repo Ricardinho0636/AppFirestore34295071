@@ -1,7 +1,7 @@
 package br.edu.up.rgm34295071.util
 
 import android.content.Context
-import com.google.firebase.example.fireeats.R
+import br.edu.up.rgm34295071.R
 import br.edu.up.rgm34295071.model.Restaurant
 import java.util.Arrays
 import java.util.Locale

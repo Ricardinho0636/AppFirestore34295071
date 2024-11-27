@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.edu.up.rgm34295071.MainActivity"
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,9 @@
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
             tools:node="merge">
-            <meta-data  android:name="com.google.firebase.example.rgm342955071.util.FirestoreInitializer"
+            <meta-data  android:name="br.edu.up.rgm34172050.util.FirestoreInitializer"
                 android:value="androidx.startup" />
-            <meta-data  android:name="com.google.firebase.example.rgm342955071.util.AuthInitializer"
+            <meta-data  android:name="br.edu.up.rgm34172050.util.AuthInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>

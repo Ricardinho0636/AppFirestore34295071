@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.example.fireeats.R
-import com.google.firebase.example.fireeats.databinding.ItemRestaurantBinding
+import br.edu.up.rgm34295071.databinding.ItemRestaurantBinding
 import br.edu.up.rgm34295071.model.Restaurant
 import br.edu.up.rgm34295071.util.RestaurantUtil
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.toObject
+import br.edu.up.rgm34295071.R
 
 /**
  * RecyclerView adapter for a list of Restaurants.

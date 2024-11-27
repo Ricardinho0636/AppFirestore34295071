@@ -22,7 +22,7 @@ import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.example.fireeats.databinding.FragmentMainBinding
+import br.edu.up.rgm34295071.databinding.FragmentMainBinding
 import br.edu.up.rgm34295071.adapter.RestaurantAdapter
 import br.edu.up.rgm34295071.model.Restaurant
 import br.edu.up.rgm34295071.util.RestaurantUtil
@@ -33,7 +33,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.example.fireeats.R
 
 class MainFragment : Fragment(),
     FilterDialogFragment.FilterListener,

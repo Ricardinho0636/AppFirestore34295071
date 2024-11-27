@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.google.firebase.example.fireeats.databinding.DialogFiltersBinding
+import br.edu.up.rgm34295071.databinding.DialogFiltersBinding
 import br.edu.up.rgm34295071.model.Restaurant
 import com.google.firebase.firestore.Query
-import com.google.firebase.example.fireeats.R
+
 
 /**
  * Dialog Fragment containing filter form.
