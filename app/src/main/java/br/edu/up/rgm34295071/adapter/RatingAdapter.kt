@@ -42,7 +42,7 @@ open class RatingAdapter(query: Query) : FirestoreAdapter<RatingAdapter.ViewHold
         companion object {
 
             private val FORMAT = SimpleDateFormat(
-                    "MM/dd/yyyy", Locale.US)
+                "MM/dd/yyyy", Locale.US)
         }
     }
 }

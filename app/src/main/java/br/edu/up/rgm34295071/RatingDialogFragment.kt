@@ -11,9 +11,6 @@ import com.google.firebase.example.fireeats.databinding.DialogRatingBinding
 import br.edu.up.rgm34295071.model.Rating
 import com.google.firebase.ktx.Firebase
 
-/**
- * Dialog Fragment containing rating form.
- */
 class RatingDialogFragment : DialogFragment() {
 
     private var _binding: DialogRatingBinding? = null
